@@ -466,3 +466,47 @@ input.field,textarea.field,select.field{font-size:16px}
 img{height:auto;max-width:100%}
 
 /* reduced motion already handled */
+
+/* === EDGE-OVERFLOW FIX === */
+html,body{overflow-x:hidden}
+.wrap{box-sizing:content-box;padding-left:max(28px,env(safe-area-inset-left));padding-right:max(28px,env(safe-area-inset-right))}
+@media(max-width:640px){
+  .wrap{padding-left:max(22px,env(safe-area-inset-left));padding-right:max(22px,env(safe-area-inset-right))}
+}
+@media(max-width:380px){
+  .wrap{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+}
+
+/* ensure no child breaks out of wrap */
+.wrap>*{max-width:100%}
+
+/* hero text safety */
+.hero h1,.hero .sub,.hero .agent-card,.hero .stat-chips,.page-hero h1,.page-hero p,.page-hero .ctas,.page-hero .stat-chips,.page-hero .agent-card{padding-left:2px;padding-right:2px}
+@media(max-width:640px){
+  .hero h1,.hero .sub,.hero .agent-card,.hero .stat-chips,.page-hero h1,.page-hero p,.page-hero .ctas,.page-hero .stat-chips,.page-hero .agent-card{padding-left:4px;padding-right:4px}
+}
+
+/* copy blocks: keep text away from edges */
+.copy h2,.copy p,.copy .more,.copy .eyebrow{padding-left:2px;padding-right:2px}
+.center-h h2,.center-h p{padding-left:4px;padding-right:4px}
+
+/* cards and quotes: internal padding stays generous */
+.card,.quote{padding:clamp(18px,4vw,22px)}
+@media(max-width:380px){
+  .card,.quote{padding:16px}
+}
+
+/* code blocks: wrap aggressively on tiny screens */
+.code{word-break:break-word;white-space:pre-wrap;overflow-wrap:break-word}
+
+/* agent card: prevent code overflow */
+.agent-card code{max-width:100%;min-width:0}
+
+/* tables: ensure the scroll container has side padding */
+.table-clip{margin-left:-6px;margin-right:-6px;padding-left:6px;padding-right:6px}
+
+/* rate scroll: add inline padding so first/last cards don't touch edge */
+.rate-scroll{padding-left:4px;padding-right:4px}
+
+/* footer links: wrap safely */
+.foot-grid a{word-break:break-word}
