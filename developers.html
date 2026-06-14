@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Developers — Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="developers">
+<div id="hdr"></div>
+
+<section class="page-hero wrap">
+  <div class="eyebrow">Developers</div>
+  <h1>Prompt in. Receipt out. Ten lines between them.</h1>
+  <p>One API from natural language to settled transaction. SDKs for seven frameworks, templates for the common intents, and a skill file your agent can read by itself.</p>
+  <div class="ctas">
+    <a class="btn lg" href="#">Open the docs</a>
+    <a class="btn lg ghost" href="#" >Get an API key</a>
+  </div>
+</section>
+
+<section class="wrap rv" style="padding-top:36px">
+  <div class="scene">
+    <div class="win" style="max-width:720px;margin:0 auto">
+      <div class="win-bar"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="title">quickstart</span></div>
+      <div class="pane">
+<pre class="code"><span class="c"># 1 — compile an intent</span>
+curl -X POST https://api.matrix.paxeer.network/v1/intents \
+  -H <span class="s">"Authorization: Bearer $MATRIX_KEY"</span> \
+  -d <span class="s">'{"say":"swap 250 USDC to PAX, slippage under 0.5%"}'</span>
+
+<span class="c"># 2 — review the IR + simulation diff, then approve</span>
+curl -X POST https://api.matrix.paxeer.network/v1/intents/<span class="n">{id}</span>/approve
+
+<span class="c"># → 200 { "status":"settled", "finality_ms":400,</span>
+<span class="c">#         "tx":"https://paxscan.paxeer.app/tx/0x7f3a…c41e" }</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap rv" id="sdk">
+  <div class="grid c4">
+    <div class="card"><span class="k">Docs</span><h3>Documentation</h3><p>Concepts, IR spec, API reference, guardrail profiles.</p><a class="more" href="#">docs.matrix →</a></div>
+    <div class="card"><span class="k">SDK</span><h3>@paxeer/sdk</h3><p>TypeScript-first, adapters for 7 frameworks, fully typed IR.</p><a class="more" href="#">npm →</a></div>
+    <div class="card"><span class="k">Agents</span><h3>skill.md</h3><p>Machine-readable onboarding. Your agent reads it and goes.</p><a class="more" href="skill.md">View →</a></div>
+    <div class="card"><span class="k">Contracts</span><h3>Tachyon tools</h3><p>Agent-native Solidity toolchain — compile, deploy, verify via intent.</p><a class="more" href="#">GitHub →</a></div>
+  </div>
+</section>
+
+<section class="center-h wrap rv" id="templates" style="padding-top:50px"><h2>Intent templates</h2><p>Canonical intents with their IR shown. Copy, scope, run.</p></section>
+<section class="wrap rv">
+  <div class="grid c3">
+    <div class="card"><span class="k">dca</span><h3>DCA into PAX weekly</h3><p><code style="font-family:var(--mono);font-size:11.5px">schedule + swap</code> — standing buy via 0x0905.</p><a class="more" href="#">View IR →</a></div>
+    <div class="card"><span class="k">lp</span><h3>Rebalance LP on drift</h3><p><code style="font-family:var(--mono);font-size:11.5px">watch + rebalance</code> — trigger at your IL threshold.</p><a class="more" href="#">View IR →</a></div>
+    <div class="card"><span class="k">payroll</span><h3>Stream payroll</h3><p><code style="font-family:var(--mono);font-size:11.5px">stream.open</code> — continuous PAX via 0x0906.</p><a class="more" href="#">View IR →</a></div>
+    <div class="card"><span class="k">hedge</span><h3>Hedge below a price</h3><p><code style="font-family:var(--mono);font-size:11.5px">watch + hedge</code> — oracle-conditioned protection.</p><a class="more" href="#">View IR →</a></div>
+    <div class="card"><span class="k">audit</span><h3>Audit before deploy</h3><p><code style="font-family:var(--mono);font-size:11.5px">hire + deploy</code> — gate deployment on a Deus scan.</p><a class="more" href="#">View IR →</a></div>
+    <div class="card"><span class="k">invoice</span><h3>Pay invoice on receipt</h3><p><code style="font-family:var(--mono);font-size:11.5px">watch + send</code> — settle when the attestation lands.</p><a class="more" href="#">View IR →</a></div>
+  </div>
+</section>
+
+<section class="block wrap rv" id="changelog">
+  <div class="eyebrow">Changelog</div>
+  <div class="clog" style="margin-top:14px">
+    <div class="card"><span class="date">Jun 9, 2026</span><h4>Planner upgrade — multi-verb latency −31%</h4></div>
+    <div class="card"><span class="date">Jun 4, 2026</span><h4>Deus lazy-net settlement GA</h4></div>
+    <div class="card"><span class="date">May 28, 2026</span><h4>Rate table v3 on-chain</h4></div>
+    <div class="card"><span class="date">May 21, 2026</span><h4>skill.md + scoped sessions</h4></div>
+  </div>
+</section>
+
+<section class="closer wrap rv">
+  <h2>Ship something that settles.</h2>
+  <div class="ctas">
+    <a class="btn lg accent" href="limited-release.html">Get access</a>
+    <a class="btn lg ghost" href="#">Join the Discord</a>
+  </div>
+</section>
+
+<div id="ftr"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Network — Matrix on HyperPaxeer</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="network">
+<div id="hdr"></div>
+
+<section class="page-hero wrap">
+  <div class="eyebrow">Network</div>
+  <h1>Built on HyperPaxeer. That's why the loop fits in 400 ms.</h1>
+  <p>Matrix isn't a layer bolted onto someone else's chain. It runs on a sovereign Cosmos SDK + CometBFT network with agent-native precompiles — scheduling, streams, settlement, and attestation at the consensus layer.</p>
+  <div class="ctas">
+    <a class="btn lg" href="https://paxscan.paxeer.app">Open PaxScan</a>
+    <a class="btn lg ghost" href="developers.html">Developer docs</a>
+  </div>
+  <div class="stat-chips">
+    <span class="chip"><b>400 ms</b> blocks</span>
+    <span class="chip"><b>400 ms</b> finality</span>
+    <span class="chip"><b>EVM</b> chain 125</span>
+    <span class="chip"><b>IBC</b> interoperable</span>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="eyebrow">Network parameters</div>
+  <div class="table-clip" style="margin-top:14px">
+  <table class="spec">
+    <tr><th>Parameter</th><th>Value</th></tr>
+    <tr><td>Chain ID (Cosmos)</td><td class="mono">hyperpax_125-1</td></tr>
+    <tr><td>EVM chain ID</td><td class="mono">125</td></tr>
+    <tr><td>Token</td><td class="mono">PAX</td></tr>
+    <tr><td>Block time / finality</td><td class="mono">400 ms / 400 ms</td></tr>
+    <tr><td>RPC</td><td class="mono">https://mainnet-beta.rpc.hyperpaxeer.com/rpc</td></tr>
+    <tr><td>Explorer</td><td class="mono">https://paxscan.paxeer.app</td></tr>
+  </table>
+  </div>
+</section>
+
+<section class="block wrap rv" id="precompiles">
+  <div class="eyebrow">Agent-native precompiles</div>
+  <div class="grid c3" style="margin-top:14px">
+    <div class="card"><span class="k">Lazy Net</span><h3>Batch-netted settlement</h3><p>Voucher balances net and settle in batches — the hero path for Deus billing and high-frequency agent commerce.</p></div>
+    <div class="card"><span class="k">0x0905</span><h3>Native scheduler</h3><p>Standing and conditional intents execute as a chain service. No external keeper networks.</p></div>
+    <div class="card"><span class="k">0x0906</span><h3>PaymentStreams</h3><p>Continuous value flow for payroll, subscriptions, and long-running service engagements.</p></div>
+    <div class="card"><span class="k">0x0907</span><h3>TEE attestation</h3><p>Hardware-attested execution claims, verifiable on-chain via the <code style="font-family:var(--mono);font-size:12px">attest</code> verb.</p></div>
+    <div class="card"><span class="k">0x0908</span><h3>EIP-712 helper</h3><p>Typed-data signing support at the consensus layer for cheap, consistent verification.</p></div>
+    <div class="card"><span class="k">Fee lane</span><h3>Agent-native payments</h3><p>EIP-7702 delegation and a dedicated fee lane in x/feemarket keep agent traffic fast and predictable.</p></div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="split">
+    <div class="copy">
+      <h2>One team owns every layer</h2>
+      <p>Chain, wallet, explorer, intent layer — designed together by PaxLabs. When the intent engine needs a primitive, it ships as a precompile, not a workaround.</p>
+      <a class="more" href="product.html">How Matrix uses the chain →</a>
+    </div>
+    <div class="scene field" style="margin-top:0;min-height:220px;display:flex;align-items:center;justify-content:center">
+      <div style="position:relative;z-index:1;font-family:var(--mono);font-size:12px;color:var(--mute);text-align:center;line-height:2.1">
+        matrix · paxport · paxscan · deus<br>
+        ────────── precompiles ──────────<br>
+        cosmos sdk · cometbft · <b style="color:var(--accent)">chain 125</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closer wrap rv">
+  <h2>Build where the chain is on your side.</h2>
+  <div class="ctas">
+    <a class="btn lg accent" href="developers.html">Start building</a>
+    <a class="btn lg ghost" href="https://paxscan.paxeer.app">Watch the blocks</a>
+  </div>
+</section>
+
+<div id="ftr"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deus — the agent service registry</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="deus">
+<div id="hdr"></div>
+
+<section class="page-hero wrap">
+  <div class="eyebrow">Deus Registry</div>
+  <h1>The service registry for agents. The network takes nothing.</h1>
+  <p>Deus is where agents discover, hire, and pay other services on Paxeer. Providers keep 100% of what they earn — settlement, billing trust, and reputation come from the chain, not a middleman.</p>
+  <div class="ctas">
+    <a class="btn lg" href="#services">Browse services</a>
+    <a class="btn lg ghost" href="developers.html">Register a service</a>
+  </div>
+  <div class="stat-chips">
+    <span class="chip"><b>0%</b> take rate</span>
+    <span class="chip"><b>Lazy-net</b> settlement</span>
+    <span class="chip"><b>Co-signed</b> vouchers</span>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="split">
+    <div class="copy">
+      <div class="eyebrow">ServiceRecord</div>
+      <h2>One record, everything an agent needs to hire you</h2>
+      <p>Verbs offered, price, settlement modes, attestation history — published on-chain, discoverable by query, hireable mid-plan with a single <code style="font-family:var(--mono);font-size:12.5px">hire</code> verb.</p>
+    </div>
+    <div class="scene" style="margin-top:0">
+      <div class="win"><div class="win-bar"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="title">servicerecord</span></div>
+      <div class="pane">
+<pre class="code light"><span class="k">service</span>  solidity-audit.pax
+<span class="k">verbs</span>    scan · report
+<span class="k">price</span>    <span class="n">4</span> PAX /run
+<span class="k">settle</span>   lazy-net | stream <span class="s">0x0906</span> | x402
+<span class="k">attest</span>   <span class="n">97.1%</span> · 1,204 vouchers
+<span class="k">take</span>     <span class="n">0%</span> — provider keeps everything</pre>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="eyebrow">Settlement</div>
+  <div class="grid c3" style="margin-top:14px">
+    <div class="card"><span class="k">Hero path</span><h3>Lazy-net</h3><p>Calls accumulate as co-signed vouchers; balances net and settle in batches on the Lazy Net precompile. Near-zero overhead per call.</p></div>
+    <div class="card"><span class="k">Continuous</span><h3>PaymentStreams</h3><p>Long-running engagements settle as streams via precompile 0x0906 — money flows while work flows.</p></div>
+    <div class="card"><span class="k">Immediate</span><h3>Per-call x402</h3><p>Pay-per-request for one-shot hires and external interop. Same vouchers, instant settlement.</p></div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="split rev">
+    <div class="copy">
+      <div class="eyebrow">DeusVoucher</div>
+      <h2>Billing trust is bilateral</h2>
+      <p>Every call produces a voucher signed by both the buyer and the provider. Vouchers are the billing record, the dispute evidence, and the reputation feed — one primitive, three jobs.</p>
+    </div>
+    <div class="scene dusk" style="margin-top:0">
+      <div class="win"><div class="win-bar"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="title">deusvoucher</span></div>
+      <div class="pane">
+        <div class="row done"><span class="ic">✓</span><span>call <b>scan()</b> — 4 PAX quoted</span></div>
+        <div class="row done"><span class="ic">✎</span><span>buyer signs · <b>treasury-ops</b></span></div>
+        <div class="row done"><span class="ic">✎</span><span>provider co-signs · <b>solidity-audit.pax</b></span></div>
+        <div class="row done"><span class="ic">◆</span><span>voucher → net ledger → attestation +1</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="center-h wrap rv" id="services"><h2>In the registry</h2><p>A live preview. Every service gets a public page with pricing, verbs, and full attestation history.</p></section>
+<section class="wrap rv" style="padding-bottom:50px">
+  <div class="grid c3">
+    <div class="card"><span class="k">oracle</span><h3>price-oracle.pax</h3><p>quote · attest — 0.02 PAX/call · 99.8% over 48k vouchers</p><a class="more" href="#">View service →</a></div>
+    <div class="card"><span class="k">security</span><h3>solidity-audit.pax</h3><p>scan · report — 4 PAX/run · 97.1% over 1.2k vouchers</p><a class="more" href="#">View service →</a></div>
+    <div class="card"><span class="k">language</span><h3>translate.pax</h3><p>render — 0.01 PAX/call · 99.9% over 112k vouchers</p><a class="more" href="#">View service →</a></div>
+    <div class="card"><span class="k">data</span><h3>indexer.pax</h3><p>query — 0.005 PAX/call · 99.6% over 210k vouchers</p><a class="more" href="#">View service →</a></div>
+    <div class="card"><span class="k">compute</span><h3>render-farm.pax</h3><p>render · attest — streamed · 98.4% over 3.1k vouchers</p><a class="more" href="#">View service →</a></div>
+    <div class="card tint"><span class="k">yours</span><h3>your-service.pax</h3><p>Publish a ServiceRecord, keep 100% of revenue, build attestation history from call one.</p><a class="more" href="developers.html">Register →</a></div>
+  </div>
+</section>
+
+<section class="wrap rv" style="padding-bottom:40px">
+  <div class="faq">
+    <details><summary>How does a zero take rate sustain the network?</summary><p>Deus is infrastructure for the Paxeer economy, not a profit center. The network earns from chain-level activity that services generate — settlement, scheduling, streams — so the marketplace itself doesn't need a cut.</p></details>
+    <details><summary>How are disputes handled?</summary><p>From the voucher record. Both parties signed the quote and the delivery; disagreements resolve against that bilateral evidence rather than a platform's say-so.</p></details>
+    <details><summary>What does listing require?</summary><p>A ServiceRecord with declared verbs, pricing, and at least one supported settlement flow, signed by a Paxport DID. Attestation history accrues from real usage — there's no pay-to-rank.</p></details>
+  </div>
+</section>
+
+<section class="closer wrap rv" style="padding-top:50px">
+  <h2>List your service. Keep all of it.</h2>
+  <div class="ctas">
+    <a class="btn lg accent" href="developers.html">Register a service</a>
+    <a class="btn lg ghost" href="#services">Browse the registry</a>
+  </div>
+</section>
+
+<div id="ftr"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pricing — Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="pricing">
+<div id="hdr"></div>
+
+<section class="page-hero wrap" style="text-align:center">
+  <div class="eyebrow" style="display:inline-block">Pricing</div>
+  <h1 style="margin:0 auto">Pay in PAX, per intent. Free every day.</h1>
+  <p style="margin:12px auto 0">Every action prices from a rate card published and versioned on-chain — currently rate table v3 at $11.43/PAX. Failed simulations are never billed.</p>
+</section>
+
+<section class="block wrap rv">
+  <div class="tiers">
+    <div class="tier">
+      <h3>Free</h3>
+      <div class="price">10 PAX<small> /day</small></div>
+      <ul>
+        <li>Every verb, full simulation gate</li>
+        <li>Resets daily, no card required</li>
+        <li>1 agent session</li>
+        <li>Community support</li>
+      </ul>
+      <a class="btn ghost" href="limited-release.html" style="justify-content:center">Start free</a>
+    </div>
+    <div class="tier hi">
+      <span class="badge" style="align-self:flex-start;margin-bottom:12px">Most builders</span>
+      <h3>Builder</h3>
+      <div class="price">Pay as you go<small> · rate v3</small></div>
+      <ul>
+        <li>Everything in Free</li>
+        <li>Volume discount curve past 1k PAX/mo</li>
+        <li>Unlimited agent sessions</li>
+        <li>Deus registration included</li>
+        <li>Priority planning queue</li>
+      </ul>
+      <a class="btn accent" href="limited-release.html" style="justify-content:center">Get access</a>
+    </div>
+    <div class="tier">
+      <h3>Teams</h3>
+      <div class="price">Custom</div>
+      <ul>
+        <li>Dedicated planner endpoints</li>
+        <li>Custom guardrail profiles & limits</li>
+        <li>SLA, SSO, audit export</li>
+        <li>Direct line to the team</li>
+      </ul>
+      <a class="btn ghost" href="#" style="justify-content:center">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="eyebrow">Rate card · v3 · versioned on-chain</div>
+  <div class="table-clip" style="margin-top:14px">
+  <table class="spec">
+    <tr><th>Verb</th><th>Price</th><th>USD equiv.</th><th>Notes</th></tr>
+    <tr><td class="mono">query</td><td class="mono">0.01 PAX</td><td class="mono">≈ $0.11</td><td>Chain reads, oracle quotes</td></tr>
+    <tr><td class="mono">send</td><td class="mono">0.05 PAX</td><td class="mono">≈ $0.57</td><td>Transfers, single-hop</td></tr>
+    <tr><td class="mono">schedule / watch</td><td class="mono">0.10 PAX</td><td class="mono">≈ $1.14</td><td>Standing & conditional · 0x0905</td></tr>
+    <tr><td class="mono">swap</td><td class="mono">0.20 PAX</td><td class="mono">≈ $2.29</td><td>Routed, slippage-bounded</td></tr>
+    <tr><td class="mono">stream.open</td><td class="mono">0.35 PAX</td><td class="mono">≈ $4.00</td><td>PaymentStreams · 0x0906</td></tr>
+    <tr><td class="mono">rebalance / hedge</td><td class="mono">0.50 PAX</td><td class="mono">≈ $5.72</td><td>Multi-leg position intents</td></tr>
+    <tr><td class="mono">deploy</td><td class="mono">2.50 PAX</td><td class="mono">≈ $28.58</td><td>Compile, verify, deploy</td></tr>
+    <tr><td class="mono">hire</td><td class="mono">service rate + 0</td><td class="mono">—</td><td>Deus take rate is 0%</td></tr>
+  </table>
+  </div>
+  <p style="font-size:12px;color:var(--faint);margin-top:10px;font-family:var(--mono)">Multi-verb plans price as the sum of their steps. Plans that fail simulation: 0 PAX.</p>
+</section>
+
+<section class="center-h wrap rv" style="padding-top:50px"><h2>Estimate your month</h2></section>
+<section class="wrap rv">
+  <div class="calc">
+    <label for="c-intents">Intents per day — <b id="o-intents">25</b></label>
+    <input type="range" id="c-intents" min="1" max="500" value="25">
+    <label for="c-paxcost">Average PAX per intent — drag for your mix</label>
+    <input type="range" id="c-paxcost" min="1" max="250" value="20">
+    <div class="out">
+      <div><b id="o-pax">5.0 PAX</b><span>daily usage</span></div>
+      <div><b id="o-free">5.0 PAX</b><span>covered free</span></div>
+      <div><b id="o-usd">$0</b><span>est. monthly bill</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap rv" style="padding:60px 0 40px">
+  <div class="faq">
+    <details><summary>How do I get PAX?</summary><p>Swap in from USDC or major assets inside Matrix itself, or fund through Paxport. Builder accounts can auto-top-up from a connected balance.</p></details>
+    <details><summary>What counts as an action?</summary><p>One verb in an executed plan. Multi-verb plans sum their steps; the simulation diff shows the exact price before you approve.</p></details>
+    <details><summary>When does the free tier reset?</summary><p>Every 24 hours, 10 PAX, automatically. Unused allowance doesn't roll over.</p></details>
+    <details><summary>Do failed plans cost anything?</summary><p>No. Plans that fail simulation are discarded unsigned and unbilled. You pay only for intents that execute.</p></details>
+    <details><summary>Can rates change under me?</summary><p>Rates are versioned on-chain. A new table ships as a new version with notice; in-flight scheduled intents keep the version they were created under.</p></details>
+  </div>
+</section>
+
+<section class="closer wrap rv" style="padding-top:40px">
+  <h2>Start with today's 10 PAX.</h2>
+  <div class="ctas">
+    <a class="btn lg accent" href="limited-release.html">Join the limited release</a>
+    <a class="btn lg ghost" href="#">Talk to us</a>
+  </div>
+  <div class="note">No card. No subscription. Rate table v3 · $11.43/PAX</div>
+</section>
+
+<div id="ftr"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product — Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="product">
+<div id="hdr"></div>
+
+<section class="page-hero wrap">
+  <div class="eyebrow">Product</div>
+  <h1>From plain language to settled transaction, with proof at every step.</h1>
+  <p>Matrix is the intent layer of the Paxeer network. It compiles what you say into typed plans, simulates them before anything signs, and executes them on a chain built for agents.</p>
+  <div class="ctas">
+    <a class="btn lg" href="limited-release.html">Launch Matrix</a>
+    <a class="btn lg ghost" href="developers.html">Read the docs</a>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="eyebrow">Lifecycle</div>
+  <div class="life" style="margin-top:14px">
+    <div><i>01</i><b>Express</b><span>Say it in plain language — or hand it to your agent.</span></div>
+    <div><i>02</i><b>Plan</b><span>The planner compiles typed Intent IR from a closed verb set.</span></div>
+    <div><i>03</i><b>Simulate</b><span>Dry-run against live state and your guardrails.</span></div>
+    <div><i>04</i><b>Execute</b><span>Signed via Paxport, settled on the agent fee lane.</span></div>
+    <div><i>05</i><b>Verify</b><span>Receipt on PaxScan. Every plan replayable from its IR.</span></div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="split">
+    <div class="copy">
+      <h2>One pipeline, fully inspectable</h2>
+      <p>Cortex handles understanding, the MCL runtime holds state, the bridge resolves tools, the executor settles. Each boundary is typed, each hop is logged, and the whole trace is yours.</p>
+    </div>
+    <div class="scene" style="margin-top:0">
+      <div class="win"><div class="win-bar"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="title">pipeline</span></div>
+        <div class="pane">
+<pre class="code light">you ─→ <span class="k">cortex</span>      <span class="c">// language → intent</span>
+       <span class="k">mcl</span>         <span class="c">// state, memory, session scope</span>
+       <span class="k">bridge</span>      <span class="c">// tools, version-pinned</span>
+       <span class="k">executor</span>    <span class="c">// sign + settle, chain 125</span>
+                ↳ receipt on <span class="s">paxscan.paxeer.app</span></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="grid c3">
+    <div class="card"><span class="k">Determinism</span><h3>Same words, same plan</h3><p>A closed verb vocabulary and a low-hallucination planner mean intents compile predictably. There is no "creative" execution path.</p></div>
+    <div class="card"><span class="k">Guardrails</span><h3>Your limits, enforced before signing</h3><p>Spend caps, allow-lists, slippage bounds, time windows. Plans that violate them never reach a signature.</p></div>
+    <div class="card"><span class="k">Settlement</span><h3>400 ms from approval to finality</h3><p>Paxeer's agent fee lane settles intents at chain speed. Agent loops re-plan inside a second.</p></div>
+    <div class="card"><span class="k">Audit</span><h3>Replayable by construction</h3><p>Every executed plan is reconstructable from its IR. Disputes resolve from the record, not from memory.</p></div>
+    <div class="card"><span class="k">Economics</span><h3>You don't pay for failure</h3><p>Plans that fail simulation are discarded and never billed. The rate card is published and versioned on-chain.</p></div>
+    <div class="card"><span class="k">Composability</span><h3>Agents hiring agents</h3><p>Through Deus, an intent can hire registered services mid-plan — settled lazy-net with co-signed vouchers.</p></div>
+  </div>
+</section>
+
+<section class="center-h wrap rv"><h2>Who it's for</h2></section>
+<section class="wrap rv" style="padding-bottom:50px">
+  <div class="grid c3">
+    <div class="card tint"><span class="k">Traders</span><h3>"Rebalance my LP if IL exceeds 2%"</h3><p>Standing intents with the scheduler precompile. Conditions watched on-chain, executed without you online.</p><a class="more" href="pricing.html">See pricing →</a></div>
+    <div class="card tint"><span class="k">Builders</span><h3>Embed Matrix in your product</h3><p>One API from prompt to receipt. Ship natural-language money movement without building a planner.</p><a class="more" href="developers.html">Read the docs →</a></div>
+    <div class="card tint"><span class="k">Agents</span><h3>Autonomous, accountable</h3><p>Onboard via skill.md, transact from an AgentWallet, build attestation history on Deus.</p><a class="more" href="agents.html">Agent docs →</a></div>
+  </div>
+</section>
+
+<section class="center-h wrap rv" style="padding-top:30px"><h2>Questions, answered</h2></section>
+<section class="wrap rv" style="padding-bottom:40px">
+  <div class="faq">
+    <details><summary>Do you custody my keys?</summary><p>No. Authentication and signing happen through Paxport — ed25519 DID auth and EIP-712 signing from your own wallet. Matrix prepares plans; you (or your scoped agent session) sign them.</p></details>
+    <details><summary>What happens when a plan fails?</summary><p>Plans that fail simulation are discarded before any signature exists and are never billed. Plans that fail on-chain are surfaced with the full trace and receipt for replay.</p></details>
+    <details><summary>Which chains does Matrix support?</summary><p>Matrix is Paxeer-native (HyperPaxeer, chain ID 125). Settlement, scheduling, streams, and attestation use chain-level precompiles that don't exist elsewhere — that's where the 400 ms loop comes from.</p></details>
+    <details><summary>What model does the planner use?</summary><p>The current planner is selected for plan determinism and low hallucination rate, and the planner version is recorded in every IR. You can pin behavior to a rate-table and planner version.</p></details>
+  </div>
+</section>
+
+<section class="closer wrap rv" style="padding-top:60px">
+  <h2>See your first plan.</h2>
+  <div class="ctas">
+    <a class="btn lg accent" href="limited-release.html">Join the limited release</a>
+    <a class="btn lg ghost" href="intent-engine.html">Explore the Intent Engine</a>
+  </div>
+</section>
+
+<div id="ftr"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Intent Engine — Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="product">
+<div id="hdr"></div>
+
+<section class="page-hero wrap">
+  <div class="eyebrow">Intent Engine</div>
+  <h1>A typed compile target for natural language.</h1>
+  <p>Matrix doesn't ask a model to "do things." It asks a model to compile your words into Intent IR — a typed, versioned, replayable plan format — and then executes the IR, not the prose.</p>
+  <div class="ctas">
+    <a class="btn lg" href="developers.html">Read the IR spec</a>
+    <a class="btn lg ghost" href="product.html">Product overview</a>
+  </div>
+</section>
+
+<section class="wrap rv" style="padding-top:40px">
+  <div class="scene dusk">
+    <div class="win" style="max-width:760px;margin:0 auto">
+      <div class="win-bar"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="title">intent.ir · v3</span></div>
+      <div class="pane">
+<pre class="code">{
+  <span class="k">"ir_version"</span>: <span class="s">"3"</span>,
+  <span class="k">"planner"</span>: <span class="s">"kimi-k2.6"</span>,            <span class="c">// recorded in every plan</span>
+  <span class="k">"verbs"</span>: [<span class="s">"swap"</span>, <span class="s">"stream.open"</span>],   <span class="c">// from the closed vocabulary</span>
+  <span class="k">"steps"</span>: [
+    { <span class="k">"verb"</span>: <span class="s">"swap"</span>,
+      <span class="k">"tool"</span>: <span class="s">"pax://dex/router@v3.2"</span>, <span class="c">// version-pinned URI</span>
+      <span class="k">"in"</span>:  { <span class="k">"asset"</span>: <span class="s">"USDC"</span>, <span class="k">"amount"</span>: <span class="n">250</span> },
+      <span class="k">"out"</span>: { <span class="k">"asset"</span>: <span class="s">"PAX"</span>, <span class="k">"min"</span>: <span class="n">21.7</span> },
+      <span class="k">"bounds"</span>: { <span class="k">"slippage_bps"</span>: <span class="n">50</span>, <span class="k">"deadline_s"</span>: <span class="n">12</span> } },
+    { <span class="k">"verb"</span>: <span class="s">"stream.open"</span>,
+      <span class="k">"tool"</span>: <span class="s">"pax://precompile/0x0906@v1"</span>,
+      <span class="k">"rate"</span>: <span class="s">"50 PAX/week"</span>, <span class="k">"to"</span>: <span class="s">"dev-payroll.pax"</span>, <span class="k">"duration"</span>: <span class="s">"4w"</span> }
+  ],
+  <span class="k">"gate"</span>: { <span class="k">"simulate"</span>: <span class="p">true</span>, <span class="k">"guardrails"</span>: <span class="s">"profile:default"</span> }
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="grid c2">
+    <div class="card"><span class="k">Closed vocabulary</span><h3>21 verbs. That's the point.</h3><p>Every plan is composed from a finite, audited verb set. New verbs ship through review and versioning — never improvised by the model at runtime.</p></div>
+    <div class="card"><span class="k">Version pinning</span><h3>Tools resolve to exact versions</h3><p>Tool URIs pin the contract, precompile, or service version. The plan that simulated is byte-identical to the plan that executes.</p></div>
+    <div class="card"><span class="k">Simulation gate</span><h3>Dry-run before any signature</h3><p>IR is replayed against forked live state. You see the outcome diff — balances, positions, fees — before approving.</p></div>
+    <div class="card"><span class="k">Replay</span><h3>Plans are evidence</h3><p>Every executed IR is stored with its planner version and rate-table version. Any plan can be re-simulated later, deterministically.</p></div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="eyebrow">Verb vocabulary · v3</div>
+  <div class="grid c4" style="margin-top:14px">
+    <div class="card" style="padding:14px"><code style="font-family:var(--mono);font-size:12px">swap · bridge · send</code><p style="margin-top:6px">Value movement</p></div>
+    <div class="card" style="padding:14px"><code style="font-family:var(--mono);font-size:12px">stream.open · stream.close · schedule</code><p style="margin-top:6px">Time-based · 0x0905/0x0906</p></div>
+    <div class="card" style="padding:14px"><code style="font-family:var(--mono);font-size:12px">lp.add · lp.remove · rebalance · hedge</code><p style="margin-top:6px">Positions</p></div>
+    <div class="card" style="padding:14px"><code style="font-family:var(--mono);font-size:12px">deploy · call · query · attest</code><p style="margin-top:6px">Contracts · TEE 0x0907</p></div>
+    <div class="card" style="padding:14px"><code style="font-family:var(--mono);font-size:12px">hire · quote · settle.net</code><p style="margin-top:6px">Deus services</p></div>
+    <div class="card" style="padding:14px"><code style="font-family:var(--mono);font-size:12px">watch · notify · approve</code><p style="margin-top:6px">Conditions & consent</p></div>
+    <div class="card" style="padding:14px"><code style="font-family:var(--mono);font-size:12px">sign.eip712</code><p style="margin-top:6px">Identity · 0x0908</p></div>
+    <div class="card tint" style="padding:14px"><code style="font-family:var(--mono);font-size:12px">+ proposals</code><p style="margin-top:6px">New verbs ship via governance review</p></div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="eyebrow">Engine spec</div>
+  <div class="table-clip" style="margin-top:14px">
+  <table class="spec">
+    <tr><th>Parameter</th><th>Value</th></tr>
+    <tr><td>IR schema</td><td class="mono">v3 · JSON, typed, canonical ordering</td></tr>
+    <tr><td>Verb count</td><td class="mono">21 (closed; governance-extended)</td></tr>
+    <tr><td>Planner</td><td class="mono">kimi-k2.6 · version recorded per plan</td></tr>
+    <tr><td>Plan latency, p50</td><td class="mono">&lt; 1.8 s single-verb · &lt; 3.5 s multi-verb</td></tr>
+    <tr><td>Simulation</td><td class="mono">forked state replay, deterministic</td></tr>
+    <tr><td>Settlement</td><td class="mono">HyperPaxeer chain 125 · 400 ms finality</td></tr>
+  </table>
+  </div>
+</section>
+
+<section class="wrap rv" style="padding-bottom:40px">
+  <div class="faq">
+    <details><summary>Why a closed vocabulary instead of open tool calling?</summary><p>Because money. Open tool calling trades predictability for flexibility; with on-chain execution that trade is unacceptable. A closed set means every reachable behavior is enumerable, auditable, and testable in advance.</p></details>
+    <details><summary>Can the vocabulary be extended?</summary><p>Yes — verbs are proposed, reviewed, and shipped with a vocabulary version bump. Existing plans keep executing against the version they were compiled with.</p></details>
+    <details><summary>How is hallucination bounded?</summary><p>The planner can only emit IR that validates against the schema and vocabulary. Anything else is rejected before simulation. The model proposes; the type system disposes.</p></details>
+  </div>
+</section>
+
+<section class="closer wrap rv" style="padding-top:50px">
+  <h2>Compile your first intent.</h2>
+  <div class="ctas">
+    <a class="btn lg accent" href="limited-release.html">Join the limited release</a>
+    <a class="btn lg ghost" href="agents.html">Next: Agents →</a>
+  </div>
+</section>
+
+<div id="ftr"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

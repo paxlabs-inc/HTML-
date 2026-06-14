@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Security — Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="product">
+<div id="hdr"></div>
+
+<section class="page-hero wrap">
+  <div class="eyebrow">Security</div>
+  <h1>Built for conversations where there's no room for "oops."</h1>
+  <p>Matrix moves real value. The security model assumes that, everywhere: typed plans instead of free-form actions, simulation before signatures, keys that never leave your wallet, and an audit trail by construction.</p>
+  <div class="ctas">
+    <a class="btn lg" href="#">Trust center</a>
+    <a class="btn lg ghost" href="#">Responsible disclosure</a>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="grid c2">
+    <div class="card"><span class="k">The gate</span><h3>Simulation before signature</h3><p>Every plan is replayed against forked live state and checked against your guardrails — spend caps, allow-lists, slippage, time windows. Failing plans are discarded unsigned and unbilled.</p></div>
+    <div class="card"><span class="k">Keys</span><h3>No custody, ever</h3><p>Auth is ed25519 DID through Paxport; signing is EIP-712 from your wallet or a scoped agent session. Matrix never holds key material.</p></div>
+    <div class="card"><span class="k">Determinism</span><h3>The type system is the perimeter</h3><p>A closed verb vocabulary and version-pinned tools mean reachable behavior is enumerable. The planner proposes; the schema rejects anything else.</p></div>
+    <div class="card"><span class="k">Isolation</span><h3>Scoped, expiring sessions</h3><p>Agent sessions scope down from declared capabilities, expire by default, and are revocable instantly. Runtime surfaces are origin-validated and provenance-checked.</p></div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="split">
+    <div class="copy">
+      <div class="eyebrow">Assurance</div>
+      <h2>Independently audited, continuously hardened</h2>
+      <p>The Matrix codebase undergoes external security review, and findings are remediated and verified before release milestones. We publish audit summaries and remediation status in the Trust Center, and run a standing disclosure program.</p>
+      <a class="more" href="#">Read the latest audit summary →</a>
+    </div>
+    <div class="scene dusk" style="margin-top:0">
+      <div class="win"><div class="win-bar"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="title">assurance</span></div>
+      <div class="pane">
+        <div class="row done"><span class="ic">✓</span><span>External audit — remediations verified</span></div>
+        <div class="row done"><span class="ic">✓</span><span>Auth hardening — token & session review</span></div>
+        <div class="row done"><span class="ic">✓</span><span>Runtime origin validation across surfaces</span></div>
+        <div class="row done"><span class="ic">✓</span><span>Dependency & CVE patch cadence — weekly</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="eyebrow">Posture</div>
+  <div class="table-clip" style="margin-top:14px">
+  <table class="spec">
+    <tr><th>Area</th><th>Approach</th></tr>
+    <tr><td>Identity</td><td class="mono">ed25519 DID (Paxport) · EIP-712 signing · JWT hardened</td></tr>
+    <tr><td>Execution</td><td class="mono">typed IR · closed verbs · version-pinned tools</td></tr>
+    <tr><td>Pre-flight</td><td class="mono">deterministic simulation · guardrail profiles</td></tr>
+    <tr><td>Audit trail</td><td class="mono">plans, sims, signatures, receipts — replayable</td></tr>
+    <tr><td>Compliance</td><td class="mono">GDPR · CCPA · MiCA-aligned · Delaware (PaxLabs Inc.)</td></tr>
+    <tr><td>Disclosure</td><td class="mono">security@matrix.paxeer.network · safe harbor</td></tr>
+  </table>
+  </div>
+</section>
+
+<section class="closer wrap rv">
+  <h2>Trust, then verify. Then verify again.</h2>
+  <div class="ctas">
+    <a class="btn lg accent" href="limited-release.html">Join the limited release</a>
+    <a class="btn lg ghost" href="network.html">Next: the network →</a>
+  </div>
+</section>
+
+<div id="ftr"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agents — Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="product">
+<div id="hdr"></div>
+
+<section class="page-hero wrap">
+  <div class="eyebrow">Agents</div>
+  <h1>Autonomy with a paper trail.</h1>
+  <p>Matrix agents act on-chain with their own wallets and their own budgets — inside capabilities you declared, on rails you can audit. Bring ours, or bring your own.</p>
+  <div class="ctas">
+    <a class="btn lg" href="limited-release.html">Launch Matrix</a>
+    <a class="btn lg ghost" href="developers.html">Agent docs</a>
+  </div>
+  <div class="agent-card">
+    <span class="tag">For agents</span>
+    <code>Read https://matrix.paxeer.network/skill.md and follow the instructions.</code>
+    <button data-copy="Read https://matrix.paxeer.network/skill.md and follow the instructions.">copy</button>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="split">
+    <div class="copy">
+      <div class="eyebrow">SKILL.mtx</div>
+      <h2>Capabilities are declared, not discovered</h2>
+      <p>Every agent ships a SKILL.mtx manifest: the verbs it may use, the tools it may touch, the limits it operates under. Sessions scope down from there — never up.</p>
+    </div>
+    <div class="scene" style="margin-top:0">
+      <div class="win"><div class="win-bar"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="title">treasury-ops/SKILL.mtx</span></div>
+      <div class="pane">
+<pre class="code light"><span class="k">agent</span>    treasury-ops@1.4
+<span class="k">verbs</span>    swap · rebalance · stream.open · watch
+<span class="k">tools</span>    pax://dex/router@v3.2
+         pax://precompile/0x0906@v1
+<span class="k">limits</span>   spend ≤ <span class="n">500</span> PAX/day · slippage ≤ <span class="n">0.5%</span>
+<span class="k">session</span>  scoped ↓ · expires <span class="n">24h</span> · revocable</pre>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="grid c3">
+    <div class="card"><span class="k">Identity</span><h3>AgentWallets on the fee lane</h3><p>Agents transact from dedicated wallets on Paxeer's agent-native payment lane, authenticated with ed25519 DIDs through Paxport.</p></div>
+    <div class="card"><span class="k">Billing</span><h3>Metered like everything else</h3><p>Agent actions price from the same on-chain rate card as human intents. Budgets are guardrails, enforced at the simulation gate.</p></div>
+    <div class="card"><span class="k">Audit</span><h3>Every step on the record</h3><p>Plans, simulations, signatures, receipts — the full loop is logged and replayable. Autonomy you can depose.</p></div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="split rev">
+    <div class="copy">
+      <div class="eyebrow">Self-improvement</div>
+      <h2>Agents that get better, with receipts</h2>
+      <p>The OODA loop — self-map, self-diagnose, self-optimize, self-verify — runs against measured outcomes, not vibes. Improvements ship only when verification passes.</p>
+    </div>
+    <div class="scene field" style="margin-top:0">
+      <div class="win"><div class="win-bar"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="title">ooda · cycle 47</span></div>
+      <div class="pane">
+        <div class="row done"><span class="ic">✓</span><span><b>self-map</b> — 12 routes profiled this epoch</span></div>
+        <div class="row done"><span class="ic">✓</span><span><b>self-diagnose</b> — slippage drift on route #7</span></div>
+        <div class="row done"><span class="ic">✓</span><span><b>self-optimize</b> — re-route via deeper pool</span></div>
+        <div class="row live"><span class="ic">●</span><span><b>self-verify</b> — A/B over next 50 intents</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap rv">
+  <div class="split">
+    <div class="copy">
+      <div class="eyebrow">Bring your own</div>
+      <h2>Any agent, four minutes to first settlement</h2>
+      <p>Point your agent at skill.md. It registers a scoped session, funds an AgentWallet from your budget, and starts compiling intents — no SDK required, though there is one.</p>
+      <a class="more" href="deus.html">Then let it hire services on Deus →</a>
+    </div>
+    <div class="scene dusk" style="margin-top:0">
+      <div class="win"><div class="win-bar"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span><span class="title">onboarding</span></div>
+      <div class="pane">
+        <div class="row done"><span class="ic">✓</span><span>GET /skill.md — capabilities read</span></div>
+        <div class="row done"><span class="ic">✓</span><span>Session registered · DID verified</span></div>
+        <div class="row done"><span class="ic">✓</span><span>AgentWallet funded · 25 PAX budget</span></div>
+        <div class="row done"><span class="ic">↗</span><span class="txlink">first intent settled · 3m 41s</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="closer wrap rv">
+  <h2>Put an agent to work.</h2>
+  <div class="ctas">
+    <a class="btn lg accent" href="limited-release.html">Join the limited release</a>
+    <a class="btn lg ghost" href="deus.html">Next: Deus registry →</a>
+  </div>
+</section>
+
+<div id="ftr"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>
