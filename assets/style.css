@@ -510,3 +510,77 @@ html,body{overflow-x:hidden}
 
 /* footer links: wrap safely */
 .foot-grid a{word-break:break-word}
+
+/* === GLOBAL BODY OVERFLOW FIX === */
+
+/* every major section/container respects viewport */
+section,header,footer,main,article,aside,nav,div.scene,div.win,div.pane,div.card,div.quote,div.tier,div.rate,div.life,div.clog,div.grid,div.split,div.copy,div.table-clip,div.rate-scroll,div.foot-grid,div.foot-bottom,div.quotes,div.logo-row,div.stat-chips,div.ctas,div.agent-card,div.seats,div.calc,div.faq,div.badge,div.kbd{max-width:100%}
+
+/* prevent any inline fixed-width element from breaking out */
+[style*="max-width"],[style*="min-width"],[style*="width"]{max-width:100% !important}
+
+/* windows and panes: never force horizontal overflow */
+.win{max-width:100%}
+.win-body{flex-wrap:wrap}
+.pane{min-width:0 !important;flex:1 1 0}
+
+/* split sections: always stack on narrow screens */
+@media(max-width:880px){
+  .split,.split.rev{grid-template-columns:1fr;gap:32px}
+  .split.rev .copy{order:0}
+}
+
+/* grids: never overflow */
+.grid.c2,.grid.c3,.grid.c4{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+@media(max-width:640px){
+  .grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}
+}
+
+/* quotes: masonry fallback safety */
+.quotes{columns:1}
+@media(min-width:601px){.quotes{columns:2}}
+@media(min-width:1024px){.quotes{columns:3}}
+
+/* tables: always scroll */
+table.spec{display:block;overflow-x:auto;white-space:nowrap}
+.table-clip{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* lifecycle strip: stack safely */
+.life{display:flex;flex-wrap:wrap}
+.life div{flex:1 1 150px;min-width:0;word-break:break-word}
+
+/* rate scroll: keep inside */
+.rate-scroll{display:flex;overflow-x:auto;gap:12px;padding:4px 4px 14px}
+.rate{flex:0 0 auto;width:min(200px,80vw)}
+
+/* changelog strip */
+.clog{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+/* footer grid */
+.foot-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+@media(max-width:640px){
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:380px){
+  .foot-grid{grid-template-columns:1fr}
+}
+
+/* page hero: constrain all children */
+.page-hero>*{max-width:100%}
+.page-hero .ctas{flex-wrap:wrap}
+
+/* agent card: wrap gracefully */
+.agent-card{flex-wrap:wrap}
+
+/* seats bar */
+.seats{flex-wrap:wrap}
+.seats .bar{min-width:120px}
+
+/* any pre/code inside a pane */
+pre,code{max-width:100%;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+
+/* images and media */
+img,video,iframe,object,embed,svg{max-width:100%;height:auto}
+
+/* remove any negative margins that pull content to edge */
+.table-clip{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
